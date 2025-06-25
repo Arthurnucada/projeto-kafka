@@ -22,6 +22,8 @@
 - Spring Boot
 - Apache Kafka
 - Docker
+- React
+- NodeJs
 ---
 
 ## Como executar
@@ -30,16 +32,21 @@
 
 ```bash
 git clone <https://github.com/Arthurnucada/projeto-kafka>
-cd kafka-ecommerce
 ```
 
-### 2. Subir o Kafka e Zookeeper com tópicos
+### 2. Subir a aplicação
+
+#### 2.1. Backend
+
+```bash
+cd backend
+```
 
 ```bash
 docker-compose up -d
 ```
 
-Verifique os tópicos com:
+(Passo opcional) Verificar os tópicos com:
 
 ```bash
 docker exec -it kafka-ecommerce-kafka-1 kafka-topics --list --bootstrap-server localhost:9092
@@ -57,6 +64,19 @@ inventory-events
 mvn clean install
 mvn spring-boot:run
 ```
+
+#### 2.2. Frontend
+
+```bash
+cd frontend
+```
+
+```bash
+npm install
+npm run dev
+```
+Com isso: O frontEnd da aplicação estará rodando em http://localhost:5173
+
 ---
 
 ## Testes
@@ -74,7 +94,7 @@ curl -X POST http://localhost:8080/orders \
 No console do Spring:
 
 ```
-[Aviso] Order 'id' status: Reservado
+[Aviso] Pedido 'id' registrado
 ```
 ---
 
