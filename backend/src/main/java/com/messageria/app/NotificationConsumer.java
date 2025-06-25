@@ -11,6 +11,6 @@ public class NotificationConsumer {
     public void notificaCliente(String message) throws Exception {
         ObjectMapper mapper = new ObjectMapper();
         InventoryEvent event = mapper.readValue(message, InventoryEvent.class);
-        System.out.printf("[Aviso] Pedido %s status: %s\n", event.getOrderId(), event.getStatus());
+        System.out.printf("[Aviso] Pedido %s registrado\n", event.getOrderId(), event.getStatus());
     }
 }
