@@ -1,0 +1,94 @@
+
+.app {
+  font-family: sans-serif;
+  padding: 1rem;
+}
+
+.product-list {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product-card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  width: 150px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.product-card button {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.cart-panel {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 300px;
+  height: 100%;
+  background: white;
+  border-left: 1px solid #ccc;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+  padding: 1rem;
+  transition: right 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cart-panel.open {
+  right: 0;
+}
+
+.cart-panel ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cart-footer {
+  margin-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+.cart-footer button {
+  margin-top: 0.5rem;
+  padding: 0.6rem 1rem;
+  width: 100%;
+  background-color: #ff5252;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cart-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: #ff5252;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.clear-cart {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  width: 100%;
+  background-color: #999;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+body.cart-open .product-list {
+  margin-right: 320px; /* ⬅️ espaço equivalente ao carrinho */
+}
