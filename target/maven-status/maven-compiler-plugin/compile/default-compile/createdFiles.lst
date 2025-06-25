@@ -1,6 +1,0 @@
-com\messageria\app\InventoryConsumer.class
-com\messageria\app\InventoryEvent.class
-com\messageria\app\Order.class
-com\messageria\app\NotificationConsumer.class
-com\messageria\app\Application.class
-com\messageria\app\OrderController.class
