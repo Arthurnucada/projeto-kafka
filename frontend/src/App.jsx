@@ -82,18 +82,22 @@ export default function App() {
 
         <div className={`cart-panel ${isOpen ? 'open' : ''}`}>
           <h2>Carrinho</h2>
-          {cart.length === 0 ? (
-              <p>Sua cesta está vazia</p>
-          ) : (
-              <ul>
-                {cart.map((item, index) => (
-                    <li key={index}>
-                      {item.name} x{item.quantity} — R$ {item.price.toFixed(2)} <br />
-                      <small>Subtotal: R$ {(item.price * item.quantity).toFixed(2)}</small>
-                    </li>
-                ))}
-              </ul>
-          )}
+
+          <div className="cart-list-container">
+            {cart.length === 0 ? (
+                <p>Sua cesta está vazia</p>
+            ) : (
+                <ul>
+                  {cart.map((item, index) => (
+                      <li key={index}>
+                        {item.name} x{item.quantity} — R$ {item.price.toFixed(2)} <br />
+                        <small>Subtotal: R$ {(item.price * item.quantity).toFixed(2)}</small>
+                      </li>
+                  ))}
+                </ul>
+            )}
+          </div>
+
           <div className="cart-footer">
             <strong>Total: R$ {total.toFixed(2)}</strong>
             <button onClick={confirmOrder}>Finalizar Pedido</button>
