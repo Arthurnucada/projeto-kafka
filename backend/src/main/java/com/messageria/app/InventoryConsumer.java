@@ -25,7 +25,6 @@ public class InventoryConsumer {
         if (pedidosProc.contains(order.getId())) return;
 
         pedidosProc.add(order.getId());
-        boolean disponivel = Math.random() > 0.3;
         InventoryEvent event = new InventoryEvent(order.getId(), "");
 
         kafkaTemplate.send("inventory-events", order.getId(), mapper.writeValueAsString(event));
